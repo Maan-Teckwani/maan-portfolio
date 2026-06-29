@@ -101,3 +101,21 @@
 @utility animate-fade-in {
   animation: fade-in 0.4s ease-out both;
 }
+
+html.custom-cursor-active,
+html.custom-cursor-active * {
+  cursor: none !important;
+}
+
+html.custom-cursor-active input,
+html.custom-cursor-active textarea,
+html.custom-cursor-active [contenteditable="true"] {
+  cursor: text !important;
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  html.custom-cursor-active,
+  html.custom-cursor-active * {
+    cursor: auto !important;
+  }
+}

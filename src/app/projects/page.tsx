@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
+import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Projects — Maan Teckwani",
@@ -11,30 +13,6 @@ export const metadata: Metadata = {
   },
 };
 
-const projects = [
-  {
-    title: "PosturePal",
-    description: "PosturePal uses AI to improve posture, reduce discomfort, and promote healthier work habits.",
-    tags: ["Next.js", "JavaScript", "Electron.js"],
-    link: "https://posturepal.in",
-    year: "2026",
-  },
-  {
-    title: "Project Two",
-    description: "Another concise description of a project you want to highlight on your portfolio.",
-    tags: ["Python", "FastAPI", "PostgreSQL"],
-    link: "#",
-    year: "2025",
-  },
-  {
-    title: "Project Three",
-    description: "Replace this placeholder text with a real description of your third project.",
-    tags: ["Next.js", "Tailwind"],
-    link: "#",
-    year: "2024",
-  },
-];
-
 export default function Projects() {
   return (
     <PageShell
@@ -44,10 +22,10 @@ export default function Projects() {
     >
       <div className="space-y-4">
         {projects.map((p) => (
-          <a
-            key={p.title}
-            href={p.link}
-            target="_blank"
+          <Link
+            key={p.slug}
+            href={`/projects/${p.slug}`}
+            data-cursor="hover"
             className="group block rounded-xl border border-border bg-card p-5 hover:border-foreground/20 hover:-translate-y-0.5 transition-all"
           >
             <div className="flex items-start justify-between gap-4">
@@ -60,6 +38,21 @@ export default function Projects() {
               </div>
               <span className="text-xs text-muted-foreground whitespace-nowrap">{p.year}</span>
             </div>
+
+            <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] motion-safe:transition-[grid-template-rows] duration-500 ease-out">
+              <div className="overflow-hidden">
+                <div className="mt-4 aspect-[16/9] relative rounded-lg overflow-hidden border border-border bg-accent">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`/projects/${p.image}`}
+                    alt={`${p.title} preview`}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  />
+                </div>
+              </div>
+            </div>
+
             <div className="mt-4 flex flex-wrap gap-1.5">
               {p.tags.map((t) => (
                 <span
@@ -70,7 +63,7 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </PageShell>

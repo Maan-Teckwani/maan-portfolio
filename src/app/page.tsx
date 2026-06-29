@@ -65,9 +65,9 @@ export default function Home() {
           </div>
 
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground list-disc list-inside marker:text-foreground/40">
-            <li>Built and shipped feature X that improved Y by Z%.</li>
-            <li>Collaborated with the team on a production-grade service using A, B, and C.</li>
-            <li>Owned end-to-end implementation of a small internal tool.</li>
+            <li>Built an enterprise ASP.NET Core Web API managing the end-to-end client-contract lifecycle for the company's HR-tech product, using a layered Controller-Repository architecture over SQL Server with ADO.NET.</li>
+            <li>Engineered an intelligent duplicate-contract detection engine that validates new contracts against existing records using business rules — Client ID, Contract Code, Line of Business, and JSON-stored consultant assignments — preventing duplicate creation and protecting data integrity.</li>
+            <li>Implemented repository-layer data access with parameterized ADO.NET queries against SQL Server, keeping controllers thin and the codebase maintainable in a team setting; delivered the feature toward production for enterprise clients.</li>
           </ul>
         </article>
       </section>

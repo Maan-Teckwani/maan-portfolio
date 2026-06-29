@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
 
 import { Sidebar, MobileNav } from "@/components/Sidebar";
+import { CustomCursor } from "@/components/CustomCursor";
 import "./globals.css";
 
 const inter = Inter({
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
       <body>
+        <CustomCursor />
         <div className="flex min-h-screen bg-background text-foreground">
           <Sidebar />
           <main className="flex-1 min-w-0 flex flex-col">

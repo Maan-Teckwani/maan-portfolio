@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Mail, Phone, Linkedin, ArrowUpRight } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
+import CopyButton from "@/components/CopyButton";
 
 export const metadata: Metadata = {
   title: "Contact — Maan Teckwani",
@@ -25,12 +26,14 @@ const links = [
     value: "maanteckwani@gmail.com",
     href: "mailto:maanteckwani@gmail.com",
     icon: Mail,
+    copy: "maanteckwani@gmail.com"
   },
   {
     label: "Phone",
     value: "+91 96638 07303",
     href: "tel:+919663807303",
     icon: Phone,
+    copy: "+91 9663807303"
   },
   {
     label: "LinkedIn",
@@ -54,7 +57,7 @@ export default function Contact() {
       description="Reach out for opportunities, collaborations, or just to chat about software, ideas, or anything else."
     >
       <div className="grid sm:grid-cols-2 gap-3">
-        {links.map(({ label, value, href, icon: Icon }) => (
+        {links.map(({ label, value, href, icon: Icon, copy }) => (
           <a
             key={label}
             href={href}
@@ -67,7 +70,18 @@ export default function Contact() {
             </div>
             <div className="flex-1 min-w-0">
               <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
-              <div className="text-sm font-medium text-foreground truncate">{value}</div>
+              <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-foreground truncate">
+                    {value}
+                  </span>
+
+                  {copy && (
+                    <CopyButton
+                      text={copy}
+                      label={label}
+                    />
+                  )}
+                </div>
             </div>
             <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-foreground transition-colors" />
           </a>

@@ -2,9 +2,9 @@ import type { ReactNode } from "react";
 
 interface PageShellProps {
   eyebrow?: string;
-  title: string;
+  title: React.ReactNode;
   description?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 export function PageShell({ eyebrow, title, description, children }: PageShellProps) {

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Home, Compass, FileText, User, Sparkles, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -20,8 +21,8 @@ export function Sidebar() {
   return (
     <aside className="hidden md:flex md:w-64 lg:w-72 shrink-0 border-r border-border bg-sidebar flex-col px-4 py-6 sticky top-0 h-screen">
       <Link href="/" className="flex items-center gap-3 px-2 py-2 mb-6 group">
-        <div className="size-11 rounded-full bg-gradient-to-br from-accent to-muted flex items-center justify-center text-base font-semibold text-foreground ring-1 ring-border">
-          MT
+        <div className="size-11 rounded-full overflow-hidden ring-1 ring-border shrink-0">
+          <Image src="/projects/MaanPFP.jpg" alt="Maan Teckwani" width={44} height={44} className="object-cover w-full h-full" />
         </div>
         <div className="leading-tight">
           <div className="font-semibold text-foreground">Maan Teckwani</div>
