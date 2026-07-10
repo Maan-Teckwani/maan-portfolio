@@ -43,24 +43,25 @@ export const projects: Project[] = [
     year: "2026",
   },
   {
-    slug: "project-two",
-    title: "Project Two",
-    tagline: "A short tagline describing this project",
+    slug: "alfred",
+    title: "Alfred",
+    tagline: "Autonomous headless engineering pipeline for the SDLC",
     description:
-      "Another concise description of a project you want to highlight on your portfolio.",
+      "Alfred is an event-driven agentic worker that resolves backlog bugs end-to-end across Jira, GitHub, and Slack.",
     overview:
-      "Replace this with a longer overview of the project — what it does, how it works, and what makes it interesting.",
+      "Alfred is an autonomous AI software engineering agent that resolves low-priority development tasks with minimal human intervention. It integrates with Jira, GitHub, and Slack to automatically process tickets, provision isolated sandbox environments, generate code patches using an LLM, validate changes through an iterative self-correction loop with automated testing, and create production-ready pull requests. If validation repeatedly fails, Alfred escalates the task to engineers via a Human-in-the-Loop (HITL) workflow, reducing maintenance overhead and improving developer productivity.",
     useCases: [
-      "First use case or audience for this project",
-      "Second use case",
-      "Third use case",
+      "Engineering teams drowning in low-severity backlog bugs and technical debt",
+      "Organizations that want to reduce mean time to resolution (MTTR) on routine patches",
+      "Senior engineers who want to protect deep-work time from constant task-switching",
     ],
     reason:
-      "Explain why you built this project and the problem it solves for you or others.",
-    image: "ProjectTwoScreenshot.png",
-    link: "#",
-    tags: ["Python", "FastAPI", "PostgreSQL"],
-    year: "2025",
+      "I wanted to see how far an autonomous agent could go inside a real SDLC — from a Jira ticket all the way to a passing Pull Request — without a human babysitting each step, while still failing safely back to a person when it hits its limits.",
+    image: "AlfredScreenshot.png",
+    link: "https://alfred-web-nine.vercel.app/#top",
+    tags: ["Python", "LLM Agents", "Jira", "GitHub", "Slack", "Docker"],
+    year: "2026",
+    github: "https://github.com/Maan-Teckwani/alfred"
   },
   {
     slug: "project-three",

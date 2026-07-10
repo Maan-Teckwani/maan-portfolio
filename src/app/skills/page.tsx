@@ -21,7 +21,7 @@ const groups: { title: string; items: Skill[] }[] = [
       { name: "Python", slug: "python", color: "3776AB" },
       { name: "Java", slug: "openjdk", color: "ED8B00" },
       { name: "C++", slug: "cplusplus", color: "00599C" },
-      { name: "Go", slug: "go", color: "00ADD8" },
+      { name: "C", slug: "c", color: "A8B9CC" },
     ],
   },
   {

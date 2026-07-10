@@ -48,9 +48,35 @@ export default async function ProjectDetail({
       </Link>
 
       <header className="mt-8">
-        <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
-          {project.title}
-        </h1>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
+            {project.title}
+          </h1>
+          <div className="flex flex-wrap items-center gap-3">
+            {hasLink && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Visit website
+                <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            )}
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Github className="size-3.5" />
+                GitHub
+              </a>
+            )}
+          </div>
+        </div>
         <p className="mt-3 text-lg text-muted-foreground">{project.tagline}</p>
         <p className="mt-2 text-sm text-muted-foreground">
           By Maan Teckwani · {project.year}
@@ -102,30 +128,6 @@ export default async function ProjectDetail({
         </section>
       </div>
 
-      <div className="mt-10 flex flex-wrap gap-3">
-        {hasLink && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
-            className="group inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
-          >
-            Visit website
-            <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
-        )}
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:border-foreground/20 transition-colors"
-          >
-            <Github className="size-4" />
-            GitHub
-          </a>
-        )}
-      </div>
     </div>
   );
 }
