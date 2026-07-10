@@ -64,24 +64,25 @@ export const projects: Project[] = [
     github: "https://github.com/Maan-Teckwani/alfred"
   },
   {
-    slug: "project-three",
-    title: "Project Three",
-    tagline: "A short tagline describing this project",
+    slug: "db-health-analyzer",
+    title: "Database Health Analyzer",
+    tagline: "Understand and fix your database in minutes",
     description:
-      "Replace this placeholder text with a real description of your third project.",
+      "An AI-assisted tool that scans relational databases to assess structure, integrity, performance, and storage health.",
     overview:
-      "Replace this with a longer overview of the project — what it does, how it works, and what makes it interesting.",
+      "Database Health Analyzer automatically scans relational databases to audit their structure, integrity, performance, and storage health. It extracts metadata — tables, columns, primary and foreign keys, indexes, and row statistics — builds a relationship graph, and runs a deterministic rule engine to detect issues like missing foreign keys, orphaned records, duplicate columns, redundant indexes, and storage waste. From those findings it computes a database health score, prioritizes remediation actions, generates executable SQL fixes, and produces an AI-powered executive summary, so developers can understand and optimize complex schemas in minutes.",
     useCases: [
-      "First use case or audience for this project",
-      "Second use case",
-      "Third use case",
+      "Developers inheriting complex or undocumented database schemas",
+      "Teams auditing production databases for integrity and storage issues",
+      "Engineers who want prioritized, executable SQL fixes rather than raw metrics",
     ],
     reason:
-      "Explain why you built this project and the problem it solves for you or others.",
-    image: "ProjectThreeScreenshot.png",
+      "I wanted a way to understand an unfamiliar database's real health — its broken relationships, redundant indexes, and wasted storage — without manually digging through metadata, and to get actionable SQL fixes instead of just a list of problems.",
+    image: "DBHealthAnalyzerScreenshot.png",
     link: "#",
-    tags: ["Next.js", "Tailwind"],
-    year: "2024",
+    tags: ["FastAPI", "SQLAlchemy", "PostgreSQL", "Gemini 2.5 Flash", "Next.js", "React Flow"],
+    year: "2026",
+    github: "https://github.com/Maan-Teckwani/db-health-analyzer"
   },
 ];
 
